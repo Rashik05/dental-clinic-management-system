@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+  <title>
+   Dental Clinic Management System
+  </title>
+  <style>
+   body{font-family:Arial,sans-serif;background:#f4f7fb;margin:0}header{background:#30cfcf;color:#fff;padding:20px;text-align:center}
+nav{background:#e8ffff;padding:12px;display:flex;justify-content:center;gap:16px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+nav a{text-decoration:none;color:#30cfcf;font-weight:bold}.container{max-width:1200px;margin:auto;padding:20px}
+.card{background:#fff;padding:20px;border-radius:8px;margin-bottom:20px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+label{display:block;font-weight:bold}input,select,textarea{width:100%;padding:10px;margin:6px 0 12px;border:1px solid #ccc;border-radius:6px}
+button{padding:10px 18px;background:#30cfcf;color:#fff;border:none;border-radius:6px;margin-right:8px}
+  </style>
+ </head>
+ <body>
+  <header>
+   <h1>
+    🦷 Dental Clinic Management System
+   </h1>
+  </header>
+  <nav>
+   <a href="#patient">
+    Patients
+   </a>
+   <a href="#dentist">
+    Dentists
+   </a>
+   <a href="#insurance">
+    Insurance
+   </a>
+   <a href="#appointment">
+    Appointments
+   </a>
+   <a href="#payment">
+    Payments
+   </a>
+   <a href="#installment">
+    Installments
+   </a>
+  </nav>
+  <div class="container">
+   <div class="card" id="patient">
+    <h2>
+     Patient Management
+    </h2>
+    <form action="process.php" method="POST">
+     <div class="grid">
+      <div>
+       <label>
+        Patient ID
+       </label>
+       <input name="patient_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Name
+       </label>
+       <input name="name"/>
+      </div>
+      <div>
+       <label>
+        Email
+       </label>
+       <input name="email" type="email"/>
+      </div>
+      <div>
+       <label>
+        Phone
+       </label>
+       <input name="phone"/>
+      </div>
+      <div>
+       <label>
+        Date of Birth
+       </label>
+       <input name="dob" type="date"/>
+      </div>
+      <div>
+       <label>
+        Address
+       </label>
+       <textarea name="address"></textarea>
+      </div>
+     </div>
+     <button name="action" type="submit" value="insert_patient">
+      Save
+     </button>
+    </form>
+   </div>
+   <div class="card" id="dentist">
+    <h2>
+     Dentist Management
+    </h2>
+    <form action="process.php" method="POST">
+     <div class="grid">
+      <div>
+       <label>
+        Dentist ID
+       </label>
+       <input name="dentist_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Name
+       </label>
+       <input name="dentist_name" type="text"/>
+      </div>
+      <div>
+       <label>
+        Email
+       </label>
+       <input name="dentist_email" type="email"/>
+      </div>
+      <div>
+       <label>
+        Phone
+       </label>
+       <input name="dentist_phone" type="text"/>
+      </div>
+      <div>
+       <label>
+        Specialization
+       </label>
+       <input name="specialization" type="text"/>
+      </div>
+     </div>
+     <button name="action" type="submit" value="insert_dentist">
+      Save
+     </button>
+    </form>
+   </div>
+   <div class="card" id="insurance">
+    <h2>
+     Insurance
+    </h2>
+    <form action="process.php" method="POST">
+     <div class="grid">
+      <div>
+       <label>
+        Insurance ID
+       </label>
+       <input name="insurance_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Provider
+       </label>
+       <input name="provider"/>
+      </div>
+      <div>
+       <label>
+        Policy Number
+       </label>
+       <input name="policy_number"/>
+      </div>
+      <div>
+       <label>
+        Coverage Type
+       </label>
+       <input name="coverage_type"/>
+      </div>
+      <div>
+       <label>
+        Coverage %
+       </label>
+       <input name="coverage_percentage" type="number"/>
+      </div>
+      <div>
+       <label>
+        Max Coverage
+       </label>
+       <input name="max_coverage" type="number"/>
+      </div>
+     </div>
+     <button name="action" type="submit" value="insert_insurance">
+      Save
+     </button>
+    </form>
+   </div>
+   <div class="card" id="appointment">
+    <h2>
+     Appointments
+    </h2>
+    <form action="process.php" method="POST">
+     <div class="grid">
+      <div>
+       <label>
+        Appointment ID
+       </label>
+       <input name="appointment_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Patient ID
+       </label>
+       <input name="patient_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Dentist ID
+       </label>
+       <input name="dentist_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Date
+       </label>
+       <input name="appointment_date" type="date"/>
+      </div>
+      <div>
+       <label>
+        Time
+       </label>
+       <input name="appointment_time" type="time"/>
+      </div>
+      <div>
+       <label>
+        Status
+       </label>
+       <select name="status">
+        <option>
+         Pending
+        </option>
+        <option>
+         Confirmed
+        </option>
+        <option>
+         Completed
+        </option>
+       </select>
+      </div>
+      <div style="grid-column:1/-1">
+       <label>
+        Notes
+       </label>
+       <textarea name="notes"></textarea>
+      </div>
+     </div>
+     <button name="action" type="submit" value="insert_appointment">
+      Insert
+     </button>
+     <button name="action" type="submit" value="update_appointment">
+      Update
+     </button>
+     <button name="action" type="submit" value="delete_appointment">
+      Delete
+     </button>
+    </form>
+   </div>
+   <div class="card" id="payment">
+    <h2>
+     Payments
+    </h2>
+    <form action="process.php" method="POST">
+     <div class="grid">
+      <div>
+       <label>
+        Payment ID
+       </label>
+       <input name="payment_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Appointment ID
+       </label>
+       <input name="appointment_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Payment Date
+       </label>
+       <input name="payment_date" type="date"/>
+      </div>
+      <div>
+       <label>
+        Amount
+       </label>
+       <input name="amount" type="number"/>
+      </div>
+      <div>
+       <label>
+        Method
+       </label>
+       <select name="payment_method">
+        <option>
+         Cash
+        </option>
+        <option>
+         Card
+        </option>
+        <option>
+         Insurance
+        </option>
+       </select>
+      </div>
+      <div>
+       <label>
+        Status
+       </label>
+       <select name="payment_status">
+        <option>
+         Paid
+        </option>
+        <option>
+         Pending
+        </option>
+       </select>
+      </div>
+     </div>
+     <button name="action" type="submit" value="insert_payment">
+      Save
+     </button>
+    </form>
+   </div>
+   <div class="card" id="installment">
+    <h2>
+     Installments
+    </h2>
+    <form action="process.php" method="POST">
+     <div class="grid">
+      <div>
+       <label>
+        Installment ID
+       </label>
+       <input/>
+      </div>
+      <div>
+       <label>
+        Payment ID
+       </label>
+       <input name="payment_id" type="number"/>
+      </div>
+      <div>
+       <label>
+        Due Date
+       </label>
+       <input name="due_date" type="date"/>
+      </div>
+      <div>
+       <label>
+        Amount Paid
+       </label>
+       <input name="amount_paid" type="number"/>
+      </div>
+      <div>
+       <label>
+        Status
+       </label>
+       <select name="installment_status">
+        <option>
+         Pending
+        </option>
+        <option>
+         Paid
+        </option>
+       </select>
+      </div>
+     </div>
+     <button name="action" type="submit" value="insert_installment">
+      Save
+     </button>
+    </form>
+   </div>
+  </div>
+ </body>
+</html>
