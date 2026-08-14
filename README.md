@@ -1,5 +1,6 @@
 # Dental Clinic Database Management System
 
+
 > A relational database management system designed using MySQL to manage patients, appointments, dentists, insurance, payments, referrals, and schedules.
 
 ---
@@ -7,7 +8,7 @@
 ## EER Diagram
 
 <p align="center">
-  <img src="images/eer-diagram.png" width="900">
+  <img src="EER diagram.png" width="900">
 </p>
 
 ---
