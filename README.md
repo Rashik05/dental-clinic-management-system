@@ -62,7 +62,7 @@ The database consists of the following entities:
 - Patient Referral
 - Patient Covered By Insurance
 
-The schema was designed using ER modeling and normalized through BCNF to ensure data consistency and minimize redundancy. :contentReference[oaicite:3]{index=3}
+The schema was designed using ER modeling and normalized through BCNF to ensure data consistency and minimize redundancy. :
 
 ---
 
