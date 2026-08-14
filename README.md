@@ -8,7 +8,7 @@
 ## EER Diagram
 
 <p align="center">
-  <img src="EER diagram.png" width="900">
+  <img src="DentalClinicDB/ER%20diagram.png" width="900">
 </p>
 
 ---
